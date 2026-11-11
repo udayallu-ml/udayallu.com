@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uday Allu — Research & Engineering</title>
+  <meta name="description" content="Uday Allu — researcher and engineer. Research, work experience, and how to get in touch.">
+  <meta name="theme-color" content="#121212">
+  <meta property="og:title" content="Uday Allu">
+  <meta property="og:description" content="Research, work experience, and contact.">
+  <meta property="og:url" content="https://udayallu.com">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://udayallu.com/photo.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f2762e'/><stop offset='1' stop-color='%23ffb27a'/></linearGradient></defs><rect width='100' height='100' rx='26' fill='url(%23g)'/><text x='50' y='68' font-size='52' font-weight='800' text-anchor='middle' fill='%23121212' font-family='system-ui,sans-serif'>U</text></svg>">
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient background -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="spotlight"></div>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="Home">
+        <span class="logo-mark">U</span>
+        <span class="logo-text">uday<span class="accent">.</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="cmdBtn" aria-label="Open command menu" title="Command menu (K)">
+          <svg viewBox="0 0 24 24"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ================= HERO ================= -->
+    <section class="hero container">
+      <div class="shapes" aria-hidden="true">
+        <span class="shape s-ring" data-depth="20"></span>
+        <span class="shape s-square" data-depth="35"></span>
+        <span class="shape s-plus" data-depth="15">+</span>
+        <span class="shape s-dot" data-depth="45"></span>
+        <span class="shape s-tri" data-depth="25"></span>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow reveal"><span class="pulse"></span>AI Researcher · Engineer</p>
+        <p class="hello reveal">Hey there, I'm</p>
+        <h1 class="name reveal">
+          <span class="name-line">Uday</span>
+          <span class="name-line outline">Allu<span class="accent">.</span></span>
+        </h1>
+        <p class="lede reveal">
+          <!-- EDIT: your one-line intro -->
+          I research and build <span class="rotator" id="rotator">retrieval-augmented generation</span><br class="hide-sm">
+          that helps language models read, retrieve and reason over real-world documents.
+        </p>
+        <div class="cta reveal">
+          <a href="#research" class="btn btn-primary">
+            See my research
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          <span class="kbd-hint">or press <kbd>K</kbd></span>
+        </div>
+        <div class="socials reveal">
+          <!-- EDIT: replace the # with your profile links -->
+          <a href="https://github.com/udayallu-ml" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+          <a href="https://www.linkedin.com/in/udayallu/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=S0o8kFMAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></svg></a>
+          <a href="mailto:hello@udayallu.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="portrait tilt">
+          <div class="portrait-ring"></div>
+          <div class="portrait-inner">
+            <!-- Add photo.jpg to the folder; initials show until then -->
+            <img src="photo.jpg" alt="Portrait of Uday Allu" onerror="this.remove()">
+            <span class="initials">UA</span>
+          </div>
+          <div class="chip chip-a"><span class="chip-dot"></span>Open to collaborations</div>
+          <div class="chip chip-b"><b>7</b> publications · <b>30+</b> citations</div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll down">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/><path d="m6 4 6 6 6-6" opacity=".5"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <!-- EDIT: replace the numbers -->
+    <section class="container stats reveal">
+      <div class="stat"><span class="num" data-count="8">0</span><span class="plus">+</span><p>Years in AI &amp; ML</p></div>
+      <div class="stat"><span class="num" data-count="7">0</span><p>Publications</p></div>
+      <div class="stat"><span class="num" data-count="30">0</span><span class="plus">+</span><p>Citations</p></div>
+      <div class="stat"><span class="num" data-count="4">0</span><p>First-author papers</p></div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section container">
+      <div class="section-head reveal">
+        <p class="kicker">01 — A little about me</p>
+        <h2>Curious by default<span class="accent">.</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <!-- EDIT: your story, 2–3 short paragraphs -->
+          <p class="big">
+            I'm an AI researcher and engineer working on <em>retrieval-augmented generation</em>
+            and <em>document understanding</em> for large language models.
+          </p>
+          <p>
+            For more than eight years I've worked on applied AI. I started as an AI scientist at Course5i,
+            then moved into machine learning engineering at yellow.ai, where I now lead the engineering of the
+            Document Cognition product.
+          </p>
+          <p>
+            My research looks at how documents should be chunked, ingested and retrieved so language models
+            give grounded, accurate answers. I'm based in the United Arab Emirates and always happy to talk
+            about RAG, document AI and LLMs.
+          </p>
+          <!-- EDIT: once resume.pdf is in the folder, change this link to href="resume.pdf" and the text to "Download my CV" -->
+          <a href="https://www.linkedin.com/in/udayallu/" target="_blank" rel="noopener" class="link-arrow">Connect on LinkedIn
+            <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+        <div class="about-cards">
+          <div class="mini-card reveal spot">
+            <span class="mini-icon">◎</span>
+            <h3>Research focus</h3>
+            <p>How documents should be chunked, ingested and retrieved so LLMs give grounded, accurate answers.</p>
+          </div>
+          <div class="mini-card reveal spot">
+            <span class="mini-icon">⌘</span>
+            <h3>Engineering</h3>
+            <p>Multimodal ingestion pipelines that turn PDFs, web pages and tables into retrieval-ready knowledge.</p>
+          </div>
+          <div class="mini-card reveal spot">
+            <span class="mini-icon">✦</span>
+            <h3>Currently</h3>
+            <p>Senior AI/ML Engineer at yellow.ai, leading the Document Cognition product.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills marquee. EDIT: your skills/tools -->
+    <div class="marquee" aria-label="Skills">
+      <div class="marquee-track">
+        <span>Retrieval-Augmented Generation</span><i>✦</i><span>Large Language Models</span><i>✦</i><span>Multimodal Document AI</span><i>✦</i>
+        <span>Chunking &amp; Ingestion</span><i>✦</i><span>Information Retrieval</span><i>✦</i><span>Tabular Data</span><i>✦</i>
+        <span>Instruction Following</span><i>✦</i><span>NLP</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ================= RESEARCH ================= -->
+    <section id="research" class="section container">
+      <div class="section-head row reveal">
+        <div>
+          <p class="kicker">02 — Publications</p>
+          <h2>Research<span class="accent">.</span></h2>
+        </div>
+        <div class="filters" role="tablist">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="rag">RAG &amp; Retrieval</button>
+          <button class="filter" data-filter="llm">LLMs</button>
+        </div>
+      </div>
+
+      <div class="work-grid">
+        <!-- EDIT: one <article> per paper. data-type matches a filter button. --h sets the cover colour. -->
+        <article class="work featured reveal spot" data-type="rag" style="--h:14">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="badge">New · Sole author</span>
+            <span class="cover-year">2026</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>GraphRAG</span><span>Multi-hop QA</span><span>Efficiency</span></div>
+            <h3>Lightfoot: Graph Retrieval-Augmented Generation with Exact, Model-Free Document Deletion</h3>
+            <p class="authors"><b>U Allu</b></p>
+            <p>A GraphRAG system where deleting a document is an exact database operation with no model calls. Across MuSiQue, 2WikiMultiHopQA and HotpotQA it builds the cheapest index of the systems compared: 26–31% cheaper than HippoRAG 2 and 3–6× cheaper than LightRAG and fast-graphrag.</p>
+            <div class="work-meta">
+              <span>arXiv:2611.11010 · 2026</span>
+              <span class="work-links"><a href="https://arxiv.org/abs/2611.11010" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2611.11010" target="_blank" rel="noopener">PDF ↗</a><a href="https://github.com/udayallu-ml/Lightfoot-GraphRAG" target="_blank" rel="noopener">Code ↗</a></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work featured flip reveal spot" data-type="rag" style="--h:20">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="badge">Featured · Most cited</span>
+            <span class="cover-year">2025</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>RAG</span><span>Multimodal</span><span>Document AI</span></div>
+            <h3>Vision-Guided Chunking Is All You Need: Enhancing RAG with Multimodal Document Understanding</h3>
+            <p class="authors">V Tripathi, T Odapally, I Das, <b>U Allu</b>, B Ahmed</p>
+            <p>Uses multimodal document understanding to decide how documents are split into chunks for retrieval-augmented generation, so structure like tables and multi-page sections isn't broken apart.</p>
+            <div class="work-meta">
+              <span>arXiv:2506.16035 · 2025</span>
+              <span class="work-links"><span class="cites">Cited by 16</span><a href="https://arxiv.org/abs/2506.16035" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2506.16035" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="rag" style="--h:32">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2026</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>RAG</span><span>Enterprise documents</span></div>
+            <h3>Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents</h3>
+            <p class="authors"><b>U Allu</b>, A Sivaprakash, P Singh, A Manocha</p>
+            <p>Retrieval-aware ingestion for enterprise documents, normalising PDFs and converting them to multimodal Markdown before chunking.</p>
+            <div class="work-meta">
+              <span>arXiv:2609.24220 · 2026</span>
+              <span class="work-links"><a href="https://arxiv.org/abs/2609.24220" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2609.24220" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="rag" style="--h:12">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2026</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>RAG</span><span>Web retrieval</span><span>Efficiency</span></div>
+            <h3>Web Retrieval-Aware Chunking (W-RAC) for Efficient and Cost-Effective RAG Systems</h3>
+            <p class="authors"><b>U Allu</b>, S Kedia, T Odapally, B Ahmed</p>
+            <p>A retrieval-aware chunking approach for web content, aimed at making RAG systems more efficient and cheaper to run.</p>
+            <div class="work-meta">
+              <span>arXiv:2604.04936 · 2026</span>
+              <span class="work-links"><span class="cites">Cited by 1</span><a href="https://arxiv.org/abs/2604.04936" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2604.04936" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="llm" style="--h:40">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2025</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>LLMs</span><span>Evaluation</span></div>
+            <h3>The Instruction Gap: LLMs Get Lost in Following Instructions</h3>
+            <p class="authors">V Tripathi, <b>U Allu</b>, B Ahmed</p>
+            <p>Examines where large language models fall short when following instructions.</p>
+            <div class="work-meta">
+              <span>arXiv:2601.03269 · 2025</span>
+              <span class="work-links"><span class="cites">Cited by 2</span><a href="https://arxiv.org/abs/2601.03269" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2601.03269" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="llm" style="--h:26">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2024</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>LLMs</span><span>Tabular data</span><span>Summarisation</span></div>
+            <h3>Beyond Extraction: Contextualising Tabular Data for Efficient Summarisation by Language Models</h3>
+            <p class="authors"><b>U Allu</b>, B Ahmed, V Tripathi</p>
+            <p>Adds context to tables before passing them to language models, so the models can summarise tabular data more efficiently.</p>
+            <div class="work-meta">
+              <span>arXiv:2401.02333 · 2024</span>
+              <span class="work-links"><span class="cites">Cited by 10</span><a href="https://arxiv.org/abs/2401.02333" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2401.02333" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="earlier reveal">
+        <p class="kicker">Earlier work</p>
+        <div class="earlier-item">
+          <span class="earlier-year">2015</span>
+          <div>
+            <h3>Idle Lock Based Privacy Preserving Secured Web Browser</h3>
+            <p class="authors">AA Rao, K Sujatha, <b>A Uday</b>, NN Mani</p>
+            <p class="muted-sm">International Conference on Man and Machine Interfacing (MAMI), 2015 · Cited by 2</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=S0o8kFMAAAAJ" target="_blank" rel="noopener" class="btn btn-ghost scholar-btn reveal">
+        All publications on Google Scholar
+        <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= WHAT PEOPLE SAY ================= -->
+    <!-- EDIT: every card links to a real public post. Keep quotes short and exact. -->
+    <section id="voices" class="section voices-section">
+      <div class="container section-head voices-head reveal">
+        <p class="voices-pre">Don't just take</p>
+        <h2><span class="my">my</span> word for it<span class="accent">.</span></h2>
+        <p class="voices-sub">What researchers and practitioners have said about the work on X, Hugging Face, Medium and YouTube.</p>
+      </div>
+
+      <div class="voices-marquee reveal" aria-label="What people say">
+        <div class="voices-track">
+          <a class="voice" href="https://x.com/BioInfo/status/1939286673218576843" target="_blank" rel="noopener">
+            <div class="voice-top"><span class="voice-icon"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></span><span class="voice-platform">X</span><span class="voice-arrow">↗</span></div>
+            <p class="voice-quote">“Vision‑guided chunking leverages LMMs to chunk PDFs by preserving visual &amp; cross‑page context.”</p>
+            <div class="voice-foot"><b>Justin H. Johnson</b><span>@BioInfo · Jun 2025</span><span class="voice-paper">on Vision-Guided Chunking</span></div>
+          </a>
+          <a class="voice" href="https://huggingface.co/papers/2604.04936" target="_blank" rel="noopener">
+            <div class="voice-top"><span class="voice-icon"><span class="emo">🤗</span></span><span class="voice-platform">Hugging Face</span><span class="voice-arrow">↗</span></div>
+            <p class="voice-quote">“Built on the W-RAC framework, I observed a reduction in average token usage from ~2500 to ~345 tokens.”</p>
+            <div class="voice-foot"><b>Flamekizer11</b><span>Practitioner · Apr 2026</span><span class="voice-paper">on W-RAC</span></div>
+          </a>
+          <a class="voice" href="https://ritvik19.medium.com/papers-explained-437-vision-guided-chunking-882220193e09" target="_blank" rel="noopener">
+            <div class="voice-top"><span class="voice-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5h16v14z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><span class="voice-platform">Medium</span><span class="voice-arrow">↗</span></div>
+            <p class="voice-quote">Featured as #437 in the <em>Papers Explained</em> series: a 10-minute deep-dive into the method and results.</p>
+            <div class="voice-foot"><b>Ritvik Rastogi</b><span>Papers Explained · Aug 2025</span><span class="voice-paper">on Vision-Guided Chunking</span></div>
+          </a>
+          <a class="voice" href="https://huggingface.co/papers/2506.16035" target="_blank" rel="noopener">
+            <div class="voice-top"><span class="voice-icon"><span class="emo">🤗</span></span><span class="voice-platform">Hugging Face</span><span class="voice-arrow">↗</span></div>
+            <p class="voice-quote">“Glad to see more papers focusing on multimodal RAG.”</p>
+            <div class="voice-foot"><b>loganbolton</b><span>Community comment · Jun 2025</span><span class="voice-paper">on Vision-Guided Chunking</span></div>
+          </a>
+          <a class="voice" href="https://www.youtube.com/watch?v=5SfeXBKOFMc" target="_blank" rel="noopener">
+            <div class="voice-top"><span class="voice-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></span><span class="voice-platform">YouTube</span><span class="voice-arrow">↗</span></div>
+            <p class="voice-quote">An independent video walkthrough of the paper and its approach to chunking complex PDFs.</p>
+            <div class="voice-foot"><b>Xiaol.x</b><span>YouTube</span><span class="voice-paper">on Vision-Guided Chunking</span></div>
+          </a>
+          <a class="voice" href="https://www.youtube.com/watch?v=y79iaaNOtfI" target="_blank" rel="noopener">
+            <div class="voice-top"><span class="voice-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></span><span class="voice-platform">YouTube</span><span class="voice-arrow">↗</span></div>
+            <p class="voice-quote">Another independent video breakdown of the paper.</p>
+            <div class="voice-foot"><b>Keyur</b><span>YouTube</span><span class="voice-paper">on Vision-Guided Chunking</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="container hf-strip reveal">
+        <span class="hf-label"><span class="emo">🤗</span> Community upvotes on Hugging Face Papers</span>
+        <a href="https://huggingface.co/papers/2506.16035" target="_blank" rel="noopener"><b>84</b> Vision-Guided Chunking</a>
+        <a href="https://huggingface.co/papers/2609.24220" target="_blank" rel="noopener"><b>48</b> D-RAC</a>
+        <a href="https://huggingface.co/papers/2604.04936" target="_blank" rel="noopener"><b>22</b> W-RAC</a>
+        <a href="https://huggingface.co/papers/2601.03269" target="_blank" rel="noopener"><b>8</b> The Instruction Gap</a>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience" class="section container">
+      <div class="section-head reveal">
+        <p class="kicker">03 — Where I've been</p>
+        <h2>Experience<span class="accent">.</span></h2>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline-line"><div class="timeline-fill"></div></div>
+
+        <!-- EDIT: one .t-item per role, newest first -->
+        <div class="t-item reveal">
+          <div class="t-dot"></div>
+          <div class="t-when">Jul 2021 — Present</div>
+          <div class="t-card spot">
+            <div class="t-head">
+              <h3>Senior AI/ML Engineer <span class="now">Now</span></h3>
+              <span class="t-org">yellow.ai</span>
+            </div>
+            <p class="t-loc">United Arab Emirates · Full-time</p>
+            <ul>
+              <li>Lead the engineering of <b>Document Cognition</b>, the platform's knowledge-management product, which turns enterprise documents into accurate, AI-powered answers.</li>
+              <li><b>Right model, right technique:</b> evaluate and select the best LLM for each task, then tune the approach around it to get the best balance of <b>accuracy, latency and cost</b> in production.</li>
+              <li><b>Retrieval at scale:</b> design retrieval systems built for high accuracy and low latency, from document ingestion and chunking through to search.</li>
+              <li><b>LLM evaluation:</b> build evaluation systems that measure LLM quality, so every model and prompt decision is backed by data rather than guesswork.</li>
+              <li><b>End to end:</b> own the full path from application development to DevOps, taking AI features from prototype to reliable production systems.</li>
+              <li><b>Research into product:</b> retrieval-aware chunking and multimodal RAG, published as D-RAC, W-RAC and Vision-Guided Chunking.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot"></div>
+          <div class="t-when">May 2020 — Jun 2021</div>
+          <div class="t-card spot">
+            <div class="t-head">
+              <h3>Machine Learning Engineer</h3>
+              <span class="t-org">yellow.ai</span>
+            </div>
+            <p class="t-loc">Bengaluru, India · Full-time</p>
+          </div>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot"></div>
+          <div class="t-when">Apr 2018 — Apr 2020</div>
+          <div class="t-card spot">
+            <div class="t-head">
+              <h3>Associate AI Scientist</h3>
+              <span class="t-org">Course5i</span>
+            </div>
+            <p class="t-loc">Bengaluru, India · Full-time</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head sub-head reveal">
+        <p class="kicker">Education</p>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card reveal spot">
+          <span class="edu-year">2017 — 2018</span>
+          <h3>Post Graduate Diploma, Data Science</h3>
+          <p class="t-org">Manipal Academy of Higher Education</p>
+          <div class="tags small"><span>Machine Learning</span><span>Deep Learning</span><span>R</span><span>Hadoop &amp; Spark</span></div>
+        </div>
+        <div class="edu-card reveal spot">
+          <span class="edu-year">2013 — 2017</span>
+          <h3>B.Tech, Computer Science</h3>
+          <p class="t-org">Miracle Educational Society Group of Institutions</p>
+          <div class="edu-highlight"><span class="edu-star">★</span><div><b>Microsoft Student Partner</b><span>Represented Microsoft on campus</span></div></div>
+          <div class="tags small"><span>Computer Science</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section container">
+      <div class="contact-card reveal">
+        <div class="contact-glow" aria-hidden="true"></div>
+        <div class="contact-copy">
+          <p class="kicker">04 — Say hello</p>
+          <h2 class="contact-title">Let's build something<br><span class="grad">remarkable</span> together<span class="accent">.</span></h2>
+          <p>Whether it's a research collaboration, a role, or just a question about my work, my inbox is open.</p>
+          <div class="email-row">
+            <a href="mailto:hello@udayallu.com" class="email">hello@udayallu.com</a>
+            <button class="icon-btn copy" id="copyEmail" data-email="hello@udayallu.com" aria-label="Copy email">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label><span>Name</span><input name="name" required autocomplete="name" placeholder="Your name"></label>
+          <label><span>Email</span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+          <label><span>Message</span><textarea name="message" rows="4" required placeholder="What would you like to talk about?"></textarea></label>
+          <button class="btn btn-primary full" type="submit">
+            Send message
+            <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-big" aria-hidden="true">udayallu<span class="accent">.</span>com</div>
+      <div class="footer-cols">
+        <div>
+          <h4>Navigate</h4>
+          <a href="#about">About</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="https://github.com/udayallu-ml" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/udayallu/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=S0o8kFMAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+        <div>
+          <h4>Info</h4>
+          <p>United Arab Emirates</p>
+          <p id="localTime">—</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Uday Allu</span>
+        <a href="#top" class="to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= COMMAND PALETTE ================= -->
+  <div class="cmd" id="cmd" hidden>
+    <div class="cmd-backdrop" data-close></div>
+    <div class="cmd-panel" role="dialog" aria-label="Command menu">
+      <input id="cmdInput" placeholder="Type a command or search…" autocomplete="off">
+      <ul id="cmdList">
+        <li data-href="#about">Go to About</li>
+        <li data-href="#research">Go to Research</li>
+        <li data-href="#voices">Go to What people say</li>
+        <li data-href="#experience">Go to Experience</li>
+        <li data-href="#contact">Go to Contact</li>
+        <li data-action="copy">Copy email address</li>
+        <li data-action="theme">Toggle light / dark theme</li>
+        <li data-href="https://scholar.google.com/citations?hl=en&amp;user=S0o8kFMAAAAJ">Open Google Scholar</li>
+      </ul>
+      <div class="cmd-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> select</span><span><kbd>esc</kbd> close</span></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
