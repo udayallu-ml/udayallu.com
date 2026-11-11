@@ -3,7 +3,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const EMAIL = $('#copyEmail')?.dataset.email || 'hello@udayallu.com';
+  const EMAIL = $('#copyEmail')?.dataset.email || 'udayallu2010@gmail.com';
 
   /* ---------- Marquee: duplicate content for a seamless loop ---------- */
   $$('.marquee-track, .voices-track').forEach(t => {
