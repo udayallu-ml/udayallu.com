@@ -123,6 +123,12 @@
     setTimeout(type, 2600);
   }
 
+  /* ---------- Sunrise on the portrait: tap to toggle on touch screens ---------- */
+  const sunPortrait = $('#portrait');
+  if (sunPortrait && !matchMedia('(hover: hover)').matches) {
+    sunPortrait.addEventListener('click', () => sunPortrait.classList.toggle('sunrise'));
+  }
+
   /* ---------- Pointer effects: spotlight, card glow, parallax, tilt ---------- */
   const fine = matchMedia('(pointer: fine)').matches;
   if (fine && !reduced) {
