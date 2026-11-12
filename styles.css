@@ -221,11 +221,21 @@ kbd {
 /* Floating shapes */
 .shapes { position: absolute; inset: 0; pointer-events: none; }
 .shape { position: absolute; display: block; transition: transform .3s ease-out; }
-.s-ring { width: 34px; height: 34px; border: 1.5px solid var(--line-2); border-radius: 50%; top: 18%; left: 52%; }
-.s-square { width: 22px; height: 22px; border: 1.5px solid var(--line-2); border-radius: 5px; top: 70%; left: 48%; rotate: 18deg; }
-.s-plus { color: var(--faint); font: 300 28px var(--sans); top: 14%; left: 30%; }
-.s-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--a2); top: 78%; right: 6%; opacity: .7; }
-.s-tri { width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 17px solid color-mix(in srgb, var(--a1) 60%, transparent); bottom: 16%; left: 4%; rotate: -14deg; }
+.shape svg {
+  display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;
+  animation: doodle 9s ease-in-out infinite alternate; animation-delay: var(--dl, 0s);
+}
+@keyframes doodle { 0% { translate: 0 0; rotate: var(--r0, -6deg); } 100% { translate: 0 -12px; rotate: var(--r1, 6deg); } }
+.h-music  { width: 30px; height: 30px; top: 16%; left: 30%; color: color-mix(in srgb, var(--a1) 55%, transparent); }
+.h-plane  { width: 38px; height: 38px; top: 15%; left: 53%; color: var(--line-2); --r0: 8deg; --r1: -4deg; --dl: -2s; }
+.h-bike   { width: 36px; height: 36px; top: 70%; left: 47%; color: var(--line-2); --dl: -4s; }
+.h-game   { width: 32px; height: 32px; top: 80%; right: 6%; color: color-mix(in srgb, var(--a2) 55%, transparent); --dl: -6s; }
+.h-camera { width: 28px; height: 28px; top: 7%; left: 5%; color: color-mix(in srgb, var(--a1) 45%, transparent); --dl: -1s; }
+.h-phones { width: 30px; height: 30px; top: 9%; right: 8%; color: var(--line-2); --dl: -5s; }
+.h-peak   { width: 30px; height: 30px; top: 52%; left: 54%; color: var(--line-2); --dl: -3s; }
+:root[data-theme="light"] .h-plane, :root[data-theme="light"] .h-bike, :root[data-theme="light"] .h-phones, :root[data-theme="light"] .h-peak { color: rgba(20, 20, 30, .18); }
+@media (max-width: 760px) { .h-peak, .h-bike, .h-music { display: none; } .h-plane { top: 6%; left: 70%; } .h-camera { top: 24%; left: auto; right: 10%; } }
+@media (prefers-reduced-motion: reduce) { .shape svg { animation: none; } }
 
 .scroll-cue { position: absolute; left: 50%; bottom: 24px; translate: -50% 0; display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--a1); }
 .scroll-cue .line { width: 1px; height: 44px; background: linear-gradient(transparent, var(--line-2)); }
