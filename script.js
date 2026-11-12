@@ -157,6 +157,51 @@
     }
   }
 
+  /* ---------- Featured papers: stream the summary like an LLM ---------- */
+  const tokenize = (text) => {
+    // Rough LLM-style pieces: words, punctuation and spaces, long words split up
+    const parts = text.match(/\s+|[A-Za-z]+|\d+|[^\sA-Za-z\d]/g) || [];
+    const out = [];
+    parts.forEach(p => {
+      if (/^[A-Za-z]{8,}$/.test(p)) { for (let i = 0; i < p.length; i += 5) out.push(p.slice(i, i + 5)); }
+      else out.push(p);
+    });
+    // merge leading spaces into the next token, like real tokenizers do
+    const merged = [];
+    out.forEach(t => { if (/^\s+$/.test(t) && merged.length) merged.push(t); else if (merged.length && /^\s+$/.test(merged[merged.length - 1])) merged[merged.length - 1] += t; else merged.push(t); });
+    return merged;
+  };
+  $$('.gen').forEach(gen => {
+    const cover = gen.closest('.cover');
+    const textEl = $('.gen-text', gen);
+    const tok = $('.gen-tok', cover);
+    const count = $('b', tok);
+    const tokens = tokenize(gen.dataset.gen);
+    const finish = () => {
+      textEl.textContent = gen.dataset.gen;
+      count.textContent = tokens.length;
+      gen.classList.add('done'); tok.classList.remove('running'); tok.classList.add('done');
+    };
+    if (reduced) { finish(); return; }
+    const run = () => {
+      tok.classList.add('running');
+      let i = 0;
+      const step = () => {
+        if (i >= tokens.length) { finish(); return; }
+        const burst = 1 + (Math.random() < 0.3 ? 1 : 0);
+        for (let b = 0; b < burst && i < tokens.length; b++) textEl.textContent += tokens[i++];
+        count.textContent = i;
+        const pause = /[.,:]$/.test(tokens[i - 1]) ? 140 : 0;
+        setTimeout(step, 28 + Math.random() * 45 + pause);
+      };
+      setTimeout(step, 450);
+    };
+    const genIO = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) { genIO.disconnect(); run(); }
+    }, { threshold: 0.45 });
+    genIO.observe(cover);
+  });
+
   /* ---------- Pointer effects: spotlight, card glow, parallax, tilt ---------- */
   const fine = matchMedia('(pointer: fine)').matches;
   if (fine && !reduced) {

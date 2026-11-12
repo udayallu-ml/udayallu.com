@@ -90,7 +90,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- ?v= tags: bump them whenever styles.css / script.js / gallery.js change, so browsers fetch the new files -->
-  <link rel="stylesheet" href="styles.css?v=20261113c">
+  <link rel="stylesheet" href="styles.css?v=20261113d">
 </head>
 <body>
   <!-- Ambient background -->
@@ -271,7 +271,12 @@
         <!-- EDIT: one <article> per paper. data-type matches a filter button. --h sets the cover colour. -->
         <article class="work featured reveal spot" data-type="rag" style="--h:14">
           <div class="cover">
-            <div class="cover-art"><span></span><span></span><span></span></div>
+            <!-- Streams a short summary like an LLM when the card scrolls into view -->
+            <div class="gen" data-gen="Lightfoot is a GraphRAG system where deleting a document is exact and model-free: a plain database operation, with no LLM calls. Across MuSiQue, 2WikiMultiHopQA and HotpotQA it builds the cheapest index of the systems compared, 26–31% cheaper than HippoRAG 2 and 3–6× cheaper than LightRAG and fast-graphrag.">
+              <div class="gen-prompt"><span class="gen-caret">›</span> summarise <b>Lightfoot</b> in plain words</div>
+              <p class="gen-out" aria-live="off"><span class="gen-text"></span><span class="gen-cursor"></span></p>
+            </div>
+            <span class="gen-tok" aria-hidden="true"><span class="gen-dot"></span><b>0</b> tokens</span>
             <span class="badge">New · Sole author</span>
             <span class="cover-year">2026</span>
           </div>
@@ -289,7 +294,12 @@
 
         <article class="work featured flip reveal spot" data-type="rag" style="--h:20">
           <div class="cover">
-            <div class="cover-art"><span></span><span></span><span></span></div>
+            <!-- Streams a short summary like an LLM when the card scrolls into view -->
+            <div class="gen" data-gen="Most RAG pipelines split documents by length, which breaks tables and sections that run across pages. This paper uses multimodal document understanding to decide where chunks begin and end, so the document&#x27;s structure stays intact and retrieval works with complete context.">
+              <div class="gen-prompt"><span class="gen-caret">›</span> summarise <b>Vision-Guided Chunking</b> in plain words</div>
+              <p class="gen-out" aria-live="off"><span class="gen-text"></span><span class="gen-cursor"></span></p>
+            </div>
+            <span class="gen-tok" aria-hidden="true"><span class="gen-dot"></span><b>0</b> tokens</span>
             <span class="badge">Featured · Most cited</span>
             <span class="cover-year">2025</span>
           </div>
@@ -642,7 +652,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-  <script src="gallery.js?v=20261113c"></script>
-  <script src="script.js?v=20261113c"></script>
+  <script src="gallery.js?v=20261113d"></script>
+  <script src="script.js?v=20261113d"></script>
 </body>
 </html>
