@@ -125,8 +125,36 @@
 
   /* ---------- Sunrise on the portrait: tap to toggle on touch screens ---------- */
   const sunPortrait = $('#portrait');
-  if (sunPortrait && !matchMedia('(hover: hover)').matches) {
-    sunPortrait.addEventListener('click', () => sunPortrait.classList.toggle('sunrise'));
+  const sunWord = $('#sunWord');
+  const SUN_WORDS = ['the rising sun', 'उगता हुआ सूरज', 'ఉదయించే సూర్యుడు'];
+  let sunTimer = null, sunIdx = 0;
+  const setSunWord = (i) => {
+    sunWord.classList.add('out');
+    setTimeout(() => {
+      sunWord.textContent = SUN_WORDS[i];
+      sunWord.classList.remove('out'); sunWord.classList.add('pre');
+      void sunWord.offsetWidth;
+      sunWord.classList.remove('pre');
+    }, 300);
+  };
+  const startSun = () => {
+    if (!sunWord || sunTimer) return;
+    sunTimer = setInterval(() => { sunIdx = (sunIdx + 1) % SUN_WORDS.length; setSunWord(sunIdx); }, 1800);
+  };
+  const stopSun = () => {
+    clearInterval(sunTimer); sunTimer = null; sunIdx = 0;
+    if (sunWord) setTimeout(() => { if (!sunTimer) sunWord.textContent = SUN_WORDS[0]; }, 500);
+  };
+  if (sunPortrait) {
+    if (matchMedia('(hover: hover)').matches) {
+      sunPortrait.addEventListener('mouseenter', startSun);
+      sunPortrait.addEventListener('mouseleave', stopSun);
+    } else {
+      sunPortrait.addEventListener('click', () => {
+        const on = sunPortrait.classList.toggle('sunrise');
+        on ? startSun() : stopSun();
+      });
+    }
   }
 
   /* ---------- Pointer effects: spotlight, card glow, parallax, tilt ---------- */

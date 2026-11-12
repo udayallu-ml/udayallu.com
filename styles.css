@@ -183,6 +183,27 @@ kbd {
 .portrait:hover .portrait-glow, .portrait.sunrise .portrait-glow { opacity: 1; scale: 1; }
 .portrait:hover .portrait-ring, .portrait.sunrise .portrait-ring { opacity: 1; filter: brightness(1.25) saturate(1.3) drop-shadow(0 0 18px rgba(255, 170, 80, .55)); }
 .portrait:hover .portrait-inner::after, .portrait.sunrise .portrait-inner::after { opacity: 1; }
+.sun-note {
+  position: absolute; left: 50%; bottom: -58px; z-index: 3; translate: -50% 10px;
+  display: flex; align-items: center; gap: 8px; white-space: nowrap;
+  padding: 8px 15px; border-radius: 999px; font-size: 13px; color: var(--text);
+  background: color-mix(in srgb, var(--bg-2) 85%, transparent); border: 1px solid color-mix(in srgb, var(--a1) 45%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  opacity: 0; transition: opacity .5s .15s, translate .6s .15s var(--ease); pointer-events: none;
+}
+.sun-note b { color: var(--a2); font-weight: 600; }
+.sun-dash { color: var(--faint); }
+.sun-word { display: inline-block; transition: opacity .35s, transform .35s var(--ease), filter .35s; }
+.sun-word.out { opacity: 0; transform: translateY(-6px); filter: blur(3px); }
+.sun-word.pre { opacity: 0; transform: translateY(6px); filter: blur(3px); transition: none; }
+.sun-emoji { display: inline-block; }
+.portrait:hover .sun-note, .portrait.sunrise .sun-note { opacity: 1; translate: -50% 0; }
+.portrait:hover .sun-emoji, .portrait.sunrise .sun-emoji { animation: sunPop .9s var(--ease); }
+@keyframes sunPop { from { transform: translateY(8px) scale(.6) rotate(-40deg); opacity: 0; } }
+@media (max-width: 760px) {
+  .sun-note { left: 0; bottom: auto; top: -52px; translate: 0 -8px; font-size: 12px; padding: 7px 12px; }
+  .portrait:hover .sun-note, .portrait.sunrise .sun-note { translate: 0 0; }
+}
 @keyframes morph { 50% { border-radius: 58% 42% 45% 55% / 55% 50% 50% 45%; } 100% { border-radius: 50% 50% 40% 60% / 40% 60% 40% 60%; } }
 .chip {
   position: absolute; display: flex; align-items: center; gap: 8px; z-index: 2;
