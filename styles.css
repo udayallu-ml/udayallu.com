@@ -103,10 +103,6 @@ kbd {
   transition: transform .5s var(--ease);
 }
 .logo:hover .logo-mark { transform: rotate(-12deg) scale(1.06); }
-.nav-links { display: flex; gap: 6px; padding: 5px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.nav-links a { position: relative; padding: 7px 16px; border-radius: 999px; font-size: 14px; color: var(--muted); transition: color .2s, background .2s; }
-.nav-links a:hover { color: var(--text); }
-.nav-links a.active { color: var(--text); background: var(--surface-2); }
 .nav-actions { display: flex; gap: 8px; align-items: center; }
 .icon-btn {
   width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
@@ -118,11 +114,6 @@ kbd {
 .icon-btn .moon { display: none; }
 :root[data-theme="light"] .icon-btn .sun { display: none; }
 :root[data-theme="light"] .icon-btn .moon { display: block; }
-.menu-btn { display: none; gap: 5px; }
-.menu-btn span { display: block; width: 16px; height: 1.6px; background: currentColor; border-radius: 2px; transition: transform .3s var(--ease); }
-.menu-btn { grid-auto-flow: row; align-content: center; justify-items: center; }
-.menu-btn[aria-expanded="true"] span:first-child { transform: translateY(3.3px) rotate(45deg); }
-.menu-btn[aria-expanded="true"] span:last-child { transform: translateY(-3.3px) rotate(-45deg); }
 
 /* ============ Buttons ============ */
 .btn {
@@ -580,7 +571,7 @@ h3 { font: 700 20px/1.3 var(--display); letter-spacing: -.01em; margin: 0; }
 @keyframes pop { from { opacity: 0; transform: translateY(-10px) scale(.98); } }
 
 /* Toast */
-.toast { position: fixed; left: 50%; bottom: 28px; translate: -50% 20px; z-index: 110; padding: 12px 18px; border-radius: 12px; background: var(--text); color: var(--bg); font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .3s, translate .3s var(--ease); }
+.toast { position: fixed; left: 50%; bottom: 104px; translate: -50% 20px; z-index: 110; padding: 12px 18px; border-radius: 12px; background: var(--text); color: var(--bg); font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .3s, translate .3s var(--ease); }
 .toast.show { opacity: 1; translate: -50% 0; }
 
 /* Reveal on scroll */
@@ -608,14 +599,6 @@ h3 { font: 700 20px/1.3 var(--display); letter-spacing: -.01em; margin: 0; }
   .container { padding-left: 18px; padding-right: 18px; }
   .hero { padding-top: 104px; min-height: 0; }
   .portrait { width: 170px; }
-  .nav-links {
-    position: fixed; top: 80px; left: 16px; right: 16px; flex-direction: column; gap: 2px; padding: 10px;
-    border-radius: 20px; background: var(--bg-2); border-color: var(--line-2); box-shadow: var(--shadow);
-    opacity: 0; transform: translateY(-10px) scale(.98); pointer-events: none; transition: opacity .25s, transform .25s var(--ease);
-  }
-  .nav-links.open { opacity: 1; transform: none; pointer-events: auto; }
-  .nav-links a { padding: 14px 16px; font-size: 17px; border-radius: 12px; }
-  .menu-btn { display: grid; }
   #cmdBtn { display: none; }
   .kbd-hint { display: none; }
   .hide-sm { display: none; }
@@ -640,4 +623,54 @@ h3 { font: 700 20px/1.3 var(--display); letter-spacing: -.01em; margin: 0; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* ============ Dock (bottom navigation, macOS style) ============ */
+body { padding-bottom: 96px; }
+.dock {
+  position: fixed; left: 50%; bottom: 18px; translate: -50% 0; z-index: 55;
+  display: flex; align-items: flex-end; gap: 6px; padding: 8px 10px;
+  border-radius: 22px; border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 70%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6); -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  box-shadow: 0 20px 50px -18px rgba(0, 0, 0, .65), inset 0 1px 0 rgba(255, 255, 255, .06);
+  animation: dockIn .8s var(--ease) .3s both;
+}
+@keyframes dockIn { from { opacity: 0; translate: -50% 40px; } }
+.dock-item {
+  --size: 46px; --s: 1;
+  position: relative; flex: none; width: calc(var(--size) * var(--s)); height: calc(var(--size) * var(--s));
+  display: grid; place-items: center; border-radius: calc(13px * var(--s));
+  color: var(--muted); background: var(--surface-2); border: 1px solid var(--line);
+  transition: width .18s var(--ease), height .18s var(--ease), border-radius .18s, color .2s, background .2s, border-color .2s;
+}
+.dock-item svg { width: calc(20px * var(--s)); height: calc(20px * var(--s)); fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: width .18s var(--ease), height .18s var(--ease); }
+.dock-item:hover, .dock-item:focus-visible { color: var(--text); border-color: var(--line-2); }
+.dock-item.active { color: #fff; background: var(--a1); border-color: transparent; box-shadow: 0 8px 22px -8px var(--a1); }
+.dock-item.active::after {
+  content: ""; position: absolute; bottom: -6px; left: 50%; translate: -50% 0;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--a2);
+}
+.dock-item .moon { display: none; }
+:root[data-theme="light"] .dock-item .sun { display: none; }
+:root[data-theme="light"] .dock-item .moon { display: block; }
+:root[data-theme="light"] .dock { box-shadow: 0 20px 50px -18px rgba(90, 50, 20, .35), inset 0 1px 0 rgba(255, 255, 255, .7); }
+.dock-tip {
+  position: absolute; bottom: calc(100% + 12px); left: 50%; translate: -50% 4px;
+  padding: 5px 10px; border-radius: 8px; white-space: nowrap; pointer-events: none;
+  font-size: 12px; font-weight: 500; color: var(--text);
+  background: var(--bg-2); border: 1px solid var(--line-2); box-shadow: var(--shadow);
+  opacity: 0; transition: opacity .15s, translate .15s;
+}
+.dock-item:hover .dock-tip, .dock-item:focus-visible .dock-tip { opacity: 1; translate: -50% 0; }
+.dock-sep { width: 1px; align-self: stretch; margin: 4px 4px; background: var(--line-2); }
+@media (hover: none) { .dock-tip { display: none; } }
+@media (prefers-reduced-motion: reduce) { .dock, .dock-item, .dock-item svg { animation: none; transition: none; } }
+@media (max-width: 760px) {
+  body { padding-bottom: 84px; }
+  .dock { gap: 4px; padding: 6px; bottom: max(12px, env(safe-area-inset-bottom)); border-radius: 20px; }
+  .dock-item { --size: 40px; }
+  .dock-item svg { width: 19px; height: 19px; }
+  .dock-sep { margin: 4px 2px; }
+  .toast { bottom: 90px; }
 }

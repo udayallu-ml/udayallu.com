@@ -38,16 +38,26 @@
   };
   $('#copyEmail').addEventListener('click', copyEmail);
 
-  /* ---------- Mobile menu ---------- */
-  const menuBtn = $('#menuBtn'), navLinks = $('#navLinks');
-  const setMenu = (open) => { navLinks.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open); };
-  menuBtn.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
-  $$('a', navLinks).forEach(a => a.addEventListener('click', () => setMenu(false)));
+  /* ---------- Dock magnification (macOS style) ---------- */
+  const dock = $('#dock');
+  const dockItems = $$('.dock-item', dock);
+  if (dock && matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const RANGE = 130, MAX = 0.55;
+    dock.addEventListener('mousemove', (e) => {
+      dockItems.forEach(el => {
+        const r = el.getBoundingClientRect();
+        const d = Math.abs(e.clientX - (r.left + r.width / 2));
+        const t = Math.max(0, 1 - d / RANGE);
+        el.style.setProperty('--s', (1 + MAX * Math.cos((1 - t) * Math.PI / 2) ** 2 * (t > 0)).toFixed(3));
+      });
+    });
+    dock.addEventListener('mouseleave', () => dockItems.forEach(el => el.style.setProperty('--s', 1)));
+  }
 
   /* ---------- Scroll: nav state, progress bar, active link, timeline ---------- */
   const nav = $('#nav');
   const sections = $$('main section[id]');
-  const links = $$('.nav-links a');
+  const links = $$('.dock-item[href]');
   const timeline = $('#timeline');
   const onScroll = () => {
     const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
@@ -56,7 +66,7 @@
 
     let current = '';
     sections.forEach(s => { if (s.getBoundingClientRect().top < innerHeight * 0.4) current = s.id; });
-    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + (current || 'top')));
 
     if (timeline) {
       const r = timeline.getBoundingClientRect();
