@@ -54,15 +54,11 @@
     dock.addEventListener('mouseleave', () => dockItems.forEach(el => el.style.setProperty('--s', 1)));
   }
 
-  /* ---------- Scroll: nav state, progress bar, active link, timeline ---------- */
-  const nav = $('#nav');
+  /* ---------- Scroll: active dock item, timeline ---------- */
   const sections = $$('main section[id]');
-  const links = $$('.dock-item[href]');
+  const links = $$('.dock-item[href]:not(.dock-logo)');
   const timeline = $('#timeline');
   const onScroll = () => {
-    const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
-    nav.classList.toggle('scrolled', y > 20);
-    root.style.setProperty('--p', h > 0 ? (y / h).toFixed(4) : 0);
 
     let current = '';
     sections.forEach(s => { if (s.getBoundingClientRect().top < innerHeight * 0.4) current = s.id; });
