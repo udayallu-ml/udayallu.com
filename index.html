@@ -88,7 +88,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Archivo+Black&family=Yellowtail&display=swap" rel="stylesheet">
   <!-- ?v= tags: bump them whenever styles.css / script.js / gallery.js change, so browsers fetch the new files -->
   <link rel="stylesheet" href="styles.css?v=20261113d">
 </head>
@@ -121,70 +121,22 @@
   </nav>
 
   <main id="top">
-    <!-- ================= HERO ================= -->
-    <section class="hero container">
-      <div class="shapes" aria-hidden="true">
-        <!-- Hobby doodles: music, travel, bike, gaming, photography, hiking. They drift with the mouse -->
-        <span class="shape h-music" data-depth="20"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
-        <span class="shape h-plane" data-depth="35"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
-        <span class="shape h-bike" data-depth="15"><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg></span>
-        <span class="shape h-game" data-depth="45"><svg viewBox="0 0 24 24"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59C2.6 9.42 2 14.46 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.55-.6-6.58-.69-7.26A4 4 0 0 0 17.32 5z"/></svg></span>
-        <span class="shape h-camera" data-depth="25"><svg viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg></span>
-        <span class="shape h-phones" data-depth="30"><svg viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></span>
-        <span class="shape h-peak" data-depth="18"><svg viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2z"/></svg></span>
+    <!-- ================= HERO BANNER (Ember) ================= -->
+    <section class="ub-hero" aria-label="Uday Allu">
+      <div class="ub-steps" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="ub-mono" aria-hidden="true">UA</div>
+      <div class="ub-stripes ub-top" aria-hidden="true"></div>
+      <div class="ub-stripes ub-bottom" aria-hidden="true"></div>
+      <div class="ub-intro">
+        <span class="ub-first">Uday</span>
+        <h1 class="ub-last">ALLU</h1>
+        <p class="ub-meta"><span>Abu Dhabi, UAE</span><span>Senior AI/ML Engineer</span><span>LLMs · RAG</span></p>
+        <a class="ub-btn" href="#research">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          View my work
+        </a>
       </div>
-
-      <div class="hero-copy">
-        <p class="eyebrow reveal"><span class="pulse"></span>AI Researcher · Engineer</p>
-        <p class="hello reveal">Hey there, I'm</p>
-        <h1 class="name reveal">
-          <span class="name-line">Uday</span>
-          <span class="name-line outline">Allu<span class="accent">.</span></span>
-        </h1>
-        <p class="lede reveal">
-          <!-- EDIT: your one-line intro -->
-          I research and build <span class="rotator" id="rotator">retrieval-augmented generation</span><br class="hide-sm">
-          that helps language models read, retrieve and reason over real-world documents.
-        </p>
-        <div class="cta reveal">
-          <a href="#research" class="btn btn-primary">
-            See my research
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
-          <span class="kbd-hint">or press <kbd>K</kbd></span>
-        </div>
-        <div class="socials reveal">
-          <!-- EDIT: replace the # with your profile links -->
-          <a href="https://github.com/udayallu-ml" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
-          <a href="https://www.linkedin.com/in/udayallu/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="https://www.instagram.com/uday_allu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a>
-          <a href="https://scholar.google.com/citations?hl=en&amp;user=S0o8kFMAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></svg></a>
-          <a href="mailto:udayallu2010@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal">
-        <div class="portrait tilt" id="portrait">
-          <!-- Hover / tap: sunrise effect (Uday = the rising sun) -->
-          <div class="portrait-glow" aria-hidden="true"></div>
-          <div class="portrait-ring"></div>
-          <div class="portrait-inner">
-            <!-- Profile photo: uday-allu.jpg; initials show if it is missing -->
-            <img src="uday-allu.jpg" alt="Uday Allu, AI researcher and Senior AI/ML Engineer" width="800" height="800" onerror="this.remove()">
-            <span class="initials">UA</span>
-          </div>
-          <div class="chip chip-a"><span class="chip-dot"></span>Open to collaborations</div>
-          <div class="chip chip-b"><b>7</b> publications · <b>30+</b> citations</div>
-          <!-- Hover caption: what "Uday" means, cycling through English, Hindi and Telugu -->
-          <div class="sun-note" aria-hidden="true"><span class="sun-emoji">☀️</span><b>Uday</b><span class="sun-dash">·</span><span class="sun-word" id="sunWord">the rising sun</span></div>
-        </div>
-      </div>
-
-      <a href="#about" class="scroll-cue" aria-label="Scroll down">
-        <span class="line"></span>
-        <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/><path d="m6 4 6 6 6-6" opacity=".5"/></svg>
-      </a>
+      <img class="ub-photo" src="uday-allu-cutout.webp" alt="Uday Allu, AI researcher and Senior AI/ML Engineer" width="558" height="696" fetchpriority="high">
     </section>
 
     <!-- ================= STATS ================= -->
