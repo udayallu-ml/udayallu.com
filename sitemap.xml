@@ -3,17 +3,21 @@
   <url>
     <loc>https://udayallu.com/</loc>
     <lastmod>2026-11-16</lastmod>
-    <image:image>
-      <image:loc>https://udayallu.com/uday-allu-square.jpg</image:loc>
-    </image:image>
+    <image:image><image:loc>https://udayallu.com/uday-allu-square.jpg</image:loc></image:image>
+    <image:image><image:loc>https://udayallu.com/uday-allu-cutout.webp</image:loc></image:image>
+    <image:image><image:loc>https://udayallu.com/stories/r15-v3/riding.webp</image:loc></image:image>
+    <image:image><image:loc>https://udayallu.com/stories/r15-v3/lake.webp</image:loc></image:image>
+    <image:image><image:loc>https://udayallu.com/stories/r15-v3/coast.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://udayallu.com/research/</loc>
     <lastmod>2026-11-16</lastmod>
+    <image:image><image:loc>https://udayallu.com/uday-allu-square.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://udayallu.com/posts/</loc>
     <lastmod>2026-11-16</lastmod>
+    <image:image><image:loc>https://udayallu.com/stories/r15-v3/riding.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://udayallu.com/posts/my-first-bike-r15-v3.html</loc>
