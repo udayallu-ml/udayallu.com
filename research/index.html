@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research — Uday Allu</title>
+  <meta name="description" content="Research by Uday Allu: papers on retrieval-augmented generation (RAG), GraphRAG, document chunking, multimodal document AI and LLM evaluation.">
+  <meta name="author" content="Uday Allu">
+  <link rel="canonical" href="https://udayallu.com/research/">
+  <meta name="theme-color" content="#121212">
+  <meta property="og:title" content="Research — Uday Allu">
+  <meta property="og:description" content="Research by Uday Allu: papers on retrieval-augmented generation (RAG), GraphRAG, document chunking, multimodal document AI and LLM evaluation.">
+  <meta property="og:url" content="https://udayallu.com/research/">
+  <meta property="og:site_name" content="Uday Allu">
+  <meta property="og:image" content="https://udayallu.com/uday-allu.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f2762e'/><stop offset='1' stop-color='%23ffb27a'/></linearGradient></defs><rect width='100' height='100' rx='26' fill='url(%23g)'/><text x='50' y='68' font-size='52' font-weight='800' text-anchor='middle' fill='%23121212' font-family='system-ui,sans-serif'>U</text></svg>">
+  <script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Archivo+Black&family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20261116b">
+  <link rel="stylesheet" href="../posts/posts.css?v=20261116a">
+</head>
+<body>
+  <header class="p-top">
+    <div class="container">
+      <a class="p-home" href="../"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><b>uday<span class="accent">.</span></b></a>
+      <button class="p-theme" id="pTheme" type="button" aria-label="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="p-band" aria-hidden="true"></div>
+
+    <main>
+    <section id="research" class="container research-page">
+      <div class="section-head row reveal">
+        <div>
+          <p class="kicker">Publications · Uday Allu</p>
+          <h1 class="research-h1">Research<span class="accent">.</span></h1>
+          <p class="travel-sub">Every paper, newest first. Filter by topic, or see the full list on Google Scholar.</p>
+        </div>
+        <div class="filters" role="tablist">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="rag">RAG &amp; Retrieval</button>
+          <button class="filter" data-filter="llm">LLMs</button>
+        </div>
+      </div>
+
+      <div class="work-grid">
+        <!-- EDIT: one <article> per paper. data-type matches a filter button. --h sets the cover colour. -->
+        <article class="work featured reveal spot" data-type="rag" style="--h:14">
+          <div class="cover">
+            <!-- Streams a short summary like an LLM when the card scrolls into view -->
+            <div class="gen" data-gen="Lightfoot is a GraphRAG system where deleting a document is exact and model-free: a plain database operation, with no LLM calls. Across MuSiQue, 2WikiMultiHopQA and HotpotQA it builds the cheapest index of the systems compared, 26–31% cheaper than HippoRAG 2 and 3–6× cheaper than LightRAG and fast-graphrag.">
+              <div class="gen-prompt"><span class="gen-caret">›</span> summarise <b>Lightfoot</b> in plain words</div>
+              <p class="gen-out" aria-live="off"><span class="gen-text"></span><span class="gen-cursor"></span></p>
+            </div>
+            <span class="gen-tok" aria-hidden="true"><span class="gen-dot"></span><b>0</b> tokens</span>
+            <span class="badge">New · Sole author</span>
+            <span class="cover-year">2026</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>GraphRAG</span><span>Multi-hop QA</span><span>Efficiency</span></div>
+            <h3>Lightfoot: Graph Retrieval-Augmented Generation with Exact, Model-Free Document Deletion</h3>
+            <p class="authors"><b>U Allu</b></p>
+            <p>A GraphRAG system where deleting a document is an exact database operation with no model calls. Across MuSiQue, 2WikiMultiHopQA and HotpotQA it builds the cheapest index of the systems compared: 26–31% cheaper than HippoRAG 2 and 3–6× cheaper than LightRAG and fast-graphrag.</p>
+            <div class="work-meta">
+              <span>arXiv:2611.11010 · 2026</span>
+              <span class="work-links"><a href="https://arxiv.org/abs/2611.11010" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2611.11010" target="_blank" rel="noopener">PDF ↗</a><a href="https://github.com/udayallu-ml/Lightfoot-GraphRAG" target="_blank" rel="noopener">Code ↗</a></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work featured flip reveal spot" data-type="rag" style="--h:20">
+          <div class="cover">
+            <!-- Streams a short summary like an LLM when the card scrolls into view -->
+            <div class="gen" data-gen="Most RAG pipelines split documents by length, which breaks tables and sections that run across pages. This paper uses multimodal document understanding to decide where chunks begin and end, so the document&#x27;s structure stays intact and retrieval works with complete context.">
+              <div class="gen-prompt"><span class="gen-caret">›</span> summarise <b>Vision-Guided Chunking</b> in plain words</div>
+              <p class="gen-out" aria-live="off"><span class="gen-text"></span><span class="gen-cursor"></span></p>
+            </div>
+            <span class="gen-tok" aria-hidden="true"><span class="gen-dot"></span><b>0</b> tokens</span>
+            <span class="badge">Featured · Most cited</span>
+            <span class="cover-year">2025</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>RAG</span><span>Multimodal</span><span>Document AI</span></div>
+            <h3>Vision-Guided Chunking Is All You Need: Enhancing RAG with Multimodal Document Understanding</h3>
+            <p class="authors">V Tripathi, T Odapally, I Das, <b>U Allu</b>, B Ahmed</p>
+            <p>Uses multimodal document understanding to decide how documents are split into chunks for retrieval-augmented generation, so structure like tables and multi-page sections isn't broken apart.</p>
+            <div class="work-meta">
+              <span>arXiv:2506.16035 · 2025</span>
+              <span class="work-links"><span class="cites">Cited by 16</span><a href="https://arxiv.org/abs/2506.16035" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2506.16035" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="rag" style="--h:32">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2026</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>RAG</span><span>Enterprise documents</span></div>
+            <h3>Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents</h3>
+            <p class="authors"><b>U Allu</b>, A Sivaprakash, P Singh, A Manocha</p>
+            <p>Retrieval-aware ingestion for enterprise documents, normalising PDFs and converting them to multimodal Markdown before chunking.</p>
+            <div class="work-meta">
+              <span>arXiv:2609.24220 · 2026</span>
+              <span class="work-links"><a href="https://arxiv.org/abs/2609.24220" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2609.24220" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="rag" style="--h:12">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2026</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>RAG</span><span>Web retrieval</span><span>Efficiency</span></div>
+            <h3>Web Retrieval-Aware Chunking (W-RAC) for Efficient and Cost-Effective RAG Systems</h3>
+            <p class="authors"><b>U Allu</b>, S Kedia, T Odapally, B Ahmed</p>
+            <p>A retrieval-aware chunking approach for web content, aimed at making RAG systems more efficient and cheaper to run.</p>
+            <div class="work-meta">
+              <span>arXiv:2604.04936 · 2026</span>
+              <span class="work-links"><span class="cites">Cited by 1</span><a href="https://arxiv.org/abs/2604.04936" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2604.04936" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="llm" style="--h:40">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2025</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>LLMs</span><span>Evaluation</span></div>
+            <h3>The Instruction Gap: LLMs Get Lost in Following Instructions</h3>
+            <p class="authors">V Tripathi, <b>U Allu</b>, B Ahmed</p>
+            <p>Examines where large language models fall short when following instructions.</p>
+            <div class="work-meta">
+              <span>arXiv:2601.03269 · 2025</span>
+              <span class="work-links"><span class="cites">Cited by 2</span><a href="https://arxiv.org/abs/2601.03269" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2601.03269" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+        <article class="work reveal spot" data-type="llm" style="--h:26">
+          <div class="cover">
+            <div class="cover-art"><span></span><span></span><span></span></div>
+            <span class="cover-year">2024</span>
+          </div>
+          <div class="work-body">
+            <div class="tags"><span>LLMs</span><span>Tabular data</span><span>Summarisation</span></div>
+            <h3>Beyond Extraction: Contextualising Tabular Data for Efficient Summarisation by Language Models</h3>
+            <p class="authors"><b>U Allu</b>, B Ahmed, V Tripathi</p>
+            <p>Adds context to tables before passing them to language models, so the models can summarise tabular data more efficiently.</p>
+            <div class="work-meta">
+              <span>arXiv:2401.02333 · 2024</span>
+              <span class="work-links"><span class="cites">Cited by 10</span><a href="https://arxiv.org/abs/2401.02333" target="_blank" rel="noopener">arXiv ↗</a><a href="https://arxiv.org/pdf/2401.02333" target="_blank" rel="noopener">PDF ↗</a></span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="earlier reveal">
+        <p class="kicker">Earlier work</p>
+        <div class="earlier-item">
+          <span class="earlier-year">2015</span>
+          <div>
+            <h3>Idle Lock Based Privacy Preserving Secured Web Browser</h3>
+            <p class="authors">AA Rao, K Sujatha, <b>A Uday</b>, NN Mani</p>
+            <p class="muted-sm">International Conference on Man and Machine Interfacing (MAMI), 2015 · Cited by 2</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=S0o8kFMAAAAJ" target="_blank" rel="noopener" class="btn btn-ghost scholar-btn reveal">
+        All publications on Google Scholar
+        <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </section>
+  </main>
+  <script src="../posts/posts.js?v=20261116a"></script>
+  <script src="research.js?v=20261116b"></script>
+</body>
+</html>

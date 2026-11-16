@@ -880,3 +880,18 @@ body { padding-bottom: 96px; }
   .story-step { opacity: 1; width: 36px; height: 36px; }
 }
 @media (prefers-reduced-motion: reduce) { .story-photo img { animation: none; } .story-arrow { transition: none; } }
+
+/* ============ Research slider (home) ============ */
+.paper-slider { overflow: hidden; border-radius: 24px; }
+.paper-track { display: flex; transition: transform .6s var(--ease); }
+.paper-track > .work { flex: 0 0 100%; min-width: 0; }
+.paper-track > .work:hover { transform: none; }
+.paper-dots { display: flex; justify-content: center; gap: 8px; margin-top: 22px; }
+.paper-dots button { width: 8px; height: 8px; border-radius: 999px; background: var(--line-2); transition: width .3s var(--ease), background .3s; }
+.paper-dots button[aria-current="true"] { width: 28px; background: var(--a1); }
+.paper-dots button:focus-visible { outline: 2px solid var(--a1); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .paper-track { transition: none; } }
+
+/* ============ Research page ============ */
+.research-page { padding-block: 64px 96px; }
+.research-h1 { font: 800 clamp(48px, 8vw, 96px)/.95 var(--display); letter-spacing: -.045em; margin: 0; }
