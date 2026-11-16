@@ -902,3 +902,7 @@ body { padding-bottom: 96px; }
 .paper-dots button[aria-current="true"] i { transform: scaleX(1); }
 .paper-dots button.run i { animation: paperFill var(--paper-interval, 5000ms) linear forwards; }
 @keyframes paperFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+/* streaming summaries on the smaller (non-featured) cards of the research page */
+.work:not(.featured) .cover:has(.gen) { aspect-ratio: auto; min-height: 320px; }
+.work:not(.featured) .gen { left: 24px; right: 24px; top: 62px; bottom: 62px; justify-content: flex-start; }
+.work:not(.featured) .gen-out { font-size: 15px; min-height: 0; }
